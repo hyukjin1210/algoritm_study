@@ -17,8 +17,8 @@ public class year {
      */
     public String solution(int a, int b) {
         String answer = "";
-        String[] day = {"FRI","SAT","SUN","MON","TUE","WED","THU",};
-        int[] date = {31,29,31,30,31,30,31,31,30,31,30,31};
+        String[] day = {"FRI", "SAT", "SUN", "MON", "TUE", "WED", "THU",};
+        int[] date = {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 //        a값이 들어올 때 date.length에서 맞는 자리를 찾는다
 //        찾은 값에서 1일부터 시작해 b의 길이만큼 day배열을 순회하며 값을 찾는다
         int total = 0;  //날짜의 합을 저장할 공간
@@ -35,6 +35,6 @@ public class year {
     public static void main(String[] args) {
         year T = new year();
 
-        System.out.println(T.solution(5,24));
+        System.out.println(T.solution(5, 24));
     }
 }
