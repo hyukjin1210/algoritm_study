@@ -26,6 +26,7 @@ public class Main {
             System.out.println(1000 + (x * 100));
         } else {
             System.out.println(max * 100);
+            System.out.println();
         }
 
     }
