@@ -1,9 +1,8 @@
-package baekjoon;
+package baekjoon.Lv_1;
 
 import java.io.*;
-import java.util.*;
 
-public class Main {
+public class boj2439 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader( System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -22,10 +21,3 @@ public class Main {
         bw.close();
     }
 }
-
-/**
- * 문제
- *
- * 출력
- *
- */
