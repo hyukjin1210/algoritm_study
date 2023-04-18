@@ -5,21 +5,29 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader( System.in));
-        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//        StringTokenizer st = new StringTokenizer(br.readLine());
-        int N = Integer.parseInt(br.readLine());
-        for (int i = 1; i <= N; i++) {
-            for (int j = N; j > i; j--) {
-                bw.write(" " );
-            }
-            for (int j = 1; j <=  i; j++) {
-                bw.write("*");
-            }
-            bw.write("\n");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+//        StringBuffer sb = new StringBuffer();
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int n = Integer.parseInt(br.readLine());
+
+        int [] array = new int[n];
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = Integer.parseInt(st.nextToken());
         }
-        bw.flush();
-        bw.close();
+
+        int s = Integer.parseInt(br.readLine());
+        int count = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == s) {
+                count++;
+            }
+        }
+        System.out.println(count);
+        br.close();
     }
 }
 
@@ -27,5 +35,4 @@ public class Main {
  * 문제
  *
  * 출력
- *
  */
