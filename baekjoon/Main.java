@@ -7,27 +7,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-//        StringBuffer sb = new StringBuffer();
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+        StringBuilder sb = new StringBuilder();
 
-        int n = Integer.parseInt(br.readLine());
+        int N = Integer.parseInt(br.readLine());
+        int min = 0;
+        int max = 0;
+//        st = new StringTokenizer(br.readLine(), " ");   //st의 값을 초기화해주지 않으면 밑에서 사용안됨
 
-        int [] array = new int[n];
+        for (int i = 0; i <= N; i++) {
+            int value = Integer.parseInt(st.nextToken());
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = Integer.parseInt(st.nextToken());
+
         }
-
-        int s = Integer.parseInt(br.readLine());
-        int count = 0;
-
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] == s) {
-                count++;
-            }
-        }
-        System.out.println(count);
-        br.close();
+        System.out.println(min + " " + max);
     }
 }
 
