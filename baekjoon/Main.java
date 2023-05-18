@@ -7,28 +7,20 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
+//        StringTokenizer st = new StringTokenizer(br.readLine(), " ");
 //        StringBuilder sb = new StringBuilder();
 
-        int [] arr = new int[9];  //9개의 자연수를 담은 배열
-        int max = 0;    //최대값
-        int cnt = 0;
-        int stop = 0;   //몇번째 위치에 있는지
 
-        for (int i = 0; i < arr.length -1; i++) {
-            arr[i] = Integer.parseInt(br.readLine());
+
+        boolean[] chk = new boolean[31];
+        for (int i = 0; i < 28; i++) {  //과제 제출 한 사람 찾기
+            int N = Integer.parseInt(br.readLine());    //입력 값
+            chk[N] = true;
         }
-
-        for (int value : arr) {
-            cnt++;
-            if (value > max) {
-                max = value;
-                stop = cnt;
-            }
+        for (int i = 1; i <= 30; i++) { //과제 제출 안한 사람 찾기
+            if (!chk[i])
+                System.out.println(i);
         }
-        System.out.println(max);
-        System.out.println(stop +1);
-
     }
 }
 
