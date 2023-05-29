@@ -31,8 +31,8 @@ public class twoSum {
 
         int target = Integer.parseInt(br.readLine());
 
-        Solution solution = new Solution();
-        int[] result = solution.twoSum(nums, target);
+        twoSum two = new twoSum();
+        int[] result = two.twoSum(nums, target);
 
         System.out.println("[" + result[0] + ", " + result[1] + "]");
     }

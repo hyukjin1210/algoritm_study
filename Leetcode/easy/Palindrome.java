@@ -1,9 +1,12 @@
-package Leetcode;
+package Leetcode.easy;
 
-import java.io.*;
-import java.util.*;
+import Leetcode.Solution;
 
-public class Solution {
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Palindrome {
     public boolean isPalindrome(int x) {
         StringBuilder sb = new StringBuilder();
         String str = String.valueOf(x);
@@ -11,9 +14,6 @@ public class Solution {
         String reverse = String.valueOf(sb.reverse());
         return str.equals(reverse);
     }
-
-
-
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
