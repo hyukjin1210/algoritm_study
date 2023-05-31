@@ -4,12 +4,29 @@ import java.io.*;
 import java.util.*;
 
 public class Solution {
-    public boolean isPalindrome(int x) {
-        StringBuilder sb = new StringBuilder();
-        String str = String.valueOf(x);
-        sb.append(str);
-        String reverse = String.valueOf(sb.reverse());
-        return str.equals(reverse);
+    public int romaToInt(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+
+        int total = 0;
+        int cal = map.get(s.charAt(s.length() -1));
+        for (int i = s.length() -1; i >= 0; i--) {
+            int num = map.get(s.charAt(i));
+            if (num >= cal) {
+                total += num;
+            } else {
+                total -= num;
+            }
+            cal = num;
+            System.out.println(num);
+        }
+        return total;
     }
 
 
@@ -17,8 +34,8 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int x = Integer.parseInt(br.readLine());
+        String s = br.readLine();
         Solution solution = new Solution();
-        System.out.println(solution.isPalindrome(x));
+        System.out.println(solution.romaToInt(s));
     }
 }

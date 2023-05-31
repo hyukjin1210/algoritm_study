@@ -18,7 +18,7 @@ public class Palindrome {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int x = Integer.parseInt(br.readLine());
-        Solution solution = new Solution();
+        Palindrome solution = new Palindrome();
         System.out.println(solution.isPalindrome(x));
     }
 }
