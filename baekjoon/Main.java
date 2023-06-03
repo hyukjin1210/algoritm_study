@@ -8,12 +8,17 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 //        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 //        StringBuilder sb = new StringBuilder();
-//        StringTokenizer st =  new StringTokenizer(br.readLine(), " ");
+        StringTokenizer st =  new StringTokenizer(br.readLine(), ",");
+        String [] strs = new String[st.countTokens()];
+        for (int i = 0; i < strs.length; i++) {
+            strs[i] = st.nextToken();
 
-        String s = br.readLine();   //로마정수
-        for (int i = 0; i < s.length(); i++) {
-            System.out.println(s);
         }
+        System.out.println("공통된 접두사 찾기 전 = " + Arrays.toString(strs));
+
+
+
+
 
 
     }

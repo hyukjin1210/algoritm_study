@@ -4,29 +4,9 @@ import java.io.*;
 import java.util.*;
 
 public class Solution {
-    public int romaToInt(String s) {
-        Map<Character, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
+    public String longestCommonPrefix(String[] strs) {
 
-        int total = 0;
-        int cal = map.get(s.charAt(s.length() -1));
-        for (int i = s.length() -1; i >= 0; i--) {
-            int num = map.get(s.charAt(i));
-            if (num >= cal) {
-                total += num;
-            } else {
-                total -= num;
-            }
-            cal = num;
-            System.out.println(num);
-        }
-        return total;
+        return null;
     }
 
 
@@ -34,8 +14,11 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
+        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
+        String [] strs = new String[st.countTokens()];
+        for (int i = 0; i < strs.length; i++) {
+            strs[i] = st.nextToken();
+        }
         Solution solution = new Solution();
-        System.out.println(solution.romaToInt(s));
     }
 }
