@@ -6,7 +6,14 @@ import java.util.*;
 public class Solution {
     public String longestCommonPrefix(String[] strs) {
 
-        return null;
+        Arrays.sort(strs);
+        String firstStr = strs[0];
+        String lastStr = strs[strs.length-1];
+        int i = 0;
+        while (i < firstStr.length() && i < lastStr.length() && firstStr.charAt(i) == lastStr.charAt(i)) {
+            i++;
+        }
+        return firstStr.substring(0, i);
     }
 
 
@@ -20,5 +27,6 @@ public class Solution {
             strs[i] = st.nextToken();
         }
         Solution solution = new Solution();
+        System.out.println(solution.longestCommonPrefix(strs));
     }
 }
