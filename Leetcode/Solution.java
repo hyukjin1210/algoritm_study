@@ -4,16 +4,20 @@ import java.io.*;
 import java.util.*;
 
 public class Solution {
-    public String longestCommonPrefix(String[] strs) {
-
-        Arrays.sort(strs);
-        String firstStr = strs[0];
-        String lastStr = strs[strs.length-1];
-        int i = 0;
-        while (i < firstStr.length() && i < lastStr.length() && firstStr.charAt(i) == lastStr.charAt(i)) {
-            i++;
+    public static boolean isValid(String s) {
+        Stack<Character> stack = new Stack<>();
+        for (char c : s.toCharArray()) {
+            if (c == '(' || c == '{' || c =='[') {
+                stack.push(c);
+            } else  {
+                if (stack.isEmpty()) return false;
+                char chk = stack.pop();
+                if (c == ')' && chk != '(') return false;
+                if (c == ']' && chk != '[') return false;
+                if (c == '}' && chk != '{') return false;
+            }
         }
-        return firstStr.substring(0, i);
+        return stack.isEmpty();
     }
 
 
@@ -21,12 +25,9 @@ public class Solution {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine(), ",");
-        String [] strs = new String[st.countTokens()];
-        for (int i = 0; i < strs.length; i++) {
-            strs[i] = st.nextToken();
-        }
-        Solution solution = new Solution();
-        System.out.println(solution.longestCommonPrefix(strs));
+        String s = br.readLine();
+        boolean isValid = isValid(s);
+        System.out.println(isValid);
+
     }
 }
