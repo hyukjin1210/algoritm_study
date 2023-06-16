@@ -3,31 +3,49 @@ package Leetcode;
 import java.io.*;
 import java.util.*;
 
+
 public class Solution {
-    public static boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            if (c == '(' || c == '{' || c =='[') {
-                stack.push(c);
-            } else  {
-                if (stack.isEmpty()) return false;
-                char chk = stack.pop();
-                if (c == ')' && chk != '(') return false;
-                if (c == ']' && chk != '[') return false;
-                if (c == '}' && chk != '{') return false;
-            }
+
+    public class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
         }
-        return stack.isEmpty();
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+        ListNode dummy = new ListNode(-1);
+        ListNode target = dummy;
+        while (list1 != null && list2 != null) {
+            if (list1.val < list2.val) {
+                dummy.next = list1;
+                list1 = list1.next;
+            } else {
+                dummy.next = list2;
+                list2 = list2.next;
+            }
+            dummy = dummy.next;
+        }
+        if (list1 != null) {
+            dummy.next = list1;
+        } else {
+            dummy.next = list2;
+        }
+        return target.next;
     }
 
 
-
-
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String s = br.readLine();
-        boolean isValid = isValid(s);
-        System.out.println(isValid);
-
+        Solution solution = new Solution();
     }
 }
